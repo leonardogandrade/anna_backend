@@ -16,5 +16,6 @@ routes.get('/download', cloudFiles.download)
 
 // Chat LLM
 routes.post('/chat', llmModel.chat)
+routes.post('/scrap', cloudFiles.webScrap)
 
 module.exports = routes

@@ -10,7 +10,7 @@ module.exports = {
         filename: function (req, file, cb) {
             const [name, ext] = file.originalname.split('.');
             deleteAllDocuments();
-            clearVectorFolder()
+            // clearVectorFolder()
             cb(null, `${randomUUID()}.${ext}`);
         }
     })

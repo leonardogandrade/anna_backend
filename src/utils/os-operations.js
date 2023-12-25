@@ -32,7 +32,22 @@ const deleteAllDocuments = () => {
     })
 }
 
+const vectorFilesExists = () => {
+    const vectorFolder = path.join(__dirname, '..', '..', 'uploads', 'documents')
+    const vectorFiles = ['args.json', 'docstore.json', 'hnswlib.index']
+    let verify = 0
+
+    vectorFiles.forEach(file => {
+        if (fs.readdirSync(vectorFolder).includes(file))
+            verify += 1
+    })
+
+    return verify
+}
+
+
 module.exports = {
     clearVectorFolder,
-    deleteAllDocuments
+    deleteAllDocuments,
+    vectorFilesExists
 }
